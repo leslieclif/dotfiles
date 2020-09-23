@@ -31,10 +31,11 @@ echo "✔ scripts are up to date"
 echo "✔ symbolic links are up to date"
 
 # Install Programs
-#./programs/vsc.sh
+./programs/programs.sh
+echo "✔ develper programs are up to date"
 
 # Get all upgrades
-#sudo apt upgrade -y
+sudo apt upgrade -y
 echo "✔ Applications are up to date"
 
 # Backup settings to Github

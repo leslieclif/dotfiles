@@ -34,6 +34,9 @@ echo "✔ symbolic links are up to date"
 ./programs/programs.sh
 echo "✔ develper programs are up to date"
 
+sudo apt autoremove -y
+echo "✔ Removed packages no longer required"
+
 # Get all upgrades
 sudo apt upgrade -y
 echo "✔ Applications are up to date"

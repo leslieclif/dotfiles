@@ -1,5 +1,6 @@
 #!/bin/bash
 
 # Ansible
-sudo apt-add-repository ppa:ansible/ansible -y
-sudo apt install -qq -y ansible
+sudo apt install software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install -qq -y ansible --user

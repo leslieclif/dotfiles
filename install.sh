@@ -15,6 +15,10 @@ homedir=$1
 # Print working directory
 echo "Dotfiles directory $(pwd)"
 
+# copy static files and config
+./copy.sh
+echo "✔ copy files"
+
 # install apt packages
 ./aptInstall.sh
 echo "✔ apt packages are up to date"

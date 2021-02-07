@@ -13,8 +13,9 @@ function linkDotfile {
 
   if [ -h ~/${1} ]; then
     # Existing symlink 
+    # This is only required for Windows WSL
     echo "Removing existing symlink: ${dest}"
-    rm ${dest} 
+    #rm ${dest} 
 
   elif [ -f "${dest}" ]; then
     # Existing file
@@ -26,9 +27,9 @@ function linkDotfile {
     echo "Backing up existing dir: ${dest}"
     mv ${dest}{,.${dateStr}}
   fi
-
+  # This is only required for Windows WSL
   echo "Creating new symlink: ${dest}"
-  ln -s ${dotfilesDir}/${1} ${dest}
+  #ln -s ${dotfilesDir}/${1} ${dest}
 }
 # List the files to create symlinks 
 files="bashrc profile zshrc exports aliases functions private gitconfig gitignore"
@@ -41,8 +42,8 @@ for file in ${files}; do
 done
 echo "✔ symlinks update done!"
 
-rm -f ~/projects
-ln -sf /mnt/c/Users/Leslie/testprojects ~/projects
+#rm -f ~/projects
+#ln -sf /mnt/c/Users/Leslie/testprojects ~/projects
 #rm -f ~/downloads
 #ln -sf /mnt/c/Users/jieverson/Downloads ~/downloads
 #rm -f ~/pictures

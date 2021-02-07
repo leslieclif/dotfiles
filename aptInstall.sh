@@ -21,5 +21,16 @@ function install {
 # Basics
 install zsh 
 install git
+install curl
+install virtualbox
+install tmux
+install dialog
+install exfat-utils
+install file
+install htop
+install nmap
+install tree
+install vim
+install wget
 # Addon packages
 echo "✔ base packages are installed"

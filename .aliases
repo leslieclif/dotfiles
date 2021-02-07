@@ -12,11 +12,12 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
-alias g="git"
+alias d="cd ~/projects/dotfiles"
+alias n="cd ~/projects/ang/notebook"
+alias ag="cd ~/projects/ang/gen"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -90,12 +91,14 @@ alias gco='git checkout'
 alias gcom='git checkout master'
 alias gcob='git checkout -b'
 alias gcm='git commit -m'
+alias gst='git status'
+alias gd='git diff'
+alias gp='git pull'
+alias gph='git push'
 alias gap='git add -p'
 alias gb='git branch'
 alias gba='git branch --all'
 alias gbd='git branch -D'
-alias gd='git diff'
-alias gp='git push -u'
 alias gbda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
 alias gbo='git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD) $(git symbolic-ref --short HEAD)'
 alias gbu='git branch --set-upstream-to=upstream/$(git symbolic-ref --short HEAD) $(git symbolic-ref --short HEAD)'
@@ -145,14 +148,15 @@ alias grh!='git reset --hard HEAD'
 alias garh!='git add --all && git reset --hard HEAD'
 alias gs='git show --show-signature'
 alias gss='git status -sb'
-alias gst='git status'
 alias gsa='git submodule add'
 alias gsu='git submodule update --remote'
 alias gsr='git submodule-remove'
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
 alias npm='sudo npm'
+
 
 # Kubectl
 alias k='kubectl'

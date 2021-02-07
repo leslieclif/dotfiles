@@ -38,11 +38,11 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 # Git auto-complete for ZSH
-if [ -f ~/.oh-my-zsh/custom/plugins/_git ]; then
-    zstyle ':completion:*:*:git:*' script ~/.oh-my-zsh/custom/plugins/_git
-    fpath=(~/.oh-my-zsh/custom/plugins $fpath)
-    autoload -Uz compinit && compinit
-fi
+#if [ -f ~/.oh-my-zsh/custom/plugins/_git ]; then
+#    zstyle ':completion:*:*:git:*' script ~/.oh-my-zsh/custom/plugins/_git
+#    fpath=(~/.oh-my-zsh/custom/plugins $fpath)
+#    autoload -Uz compinit && compinit
+#sssfi
 
 ##############################################################################
 # History Configuration
@@ -51,6 +51,6 @@ HISTSIZE=1000               #How many lines of history to keep in memory
 HISTFILE=~/.zsh_history     #Where to save history to disk
 SAVEHIST=1000               #Number of history entries to save to disk
 HISTDUP=erase               #Erase duplicates in the history file
-setopt    appendhistory     #Append history to the history file (no overwriting)
-setopt    sharehistory      #Share history across terminals
-setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+#setopt    appendhistory     #Append history to the history file (no overwriting)
+#setopt    sharehistory      #Share history across terminals
+#setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed

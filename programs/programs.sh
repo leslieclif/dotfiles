@@ -1,6 +1,8 @@
 #!/bin/bash
 
 cd programs/
-#./vsc.sh
+./docker.sh
+./firefox.sh
 ./python.sh
+./vsc.sh
 ./vagrant.sh

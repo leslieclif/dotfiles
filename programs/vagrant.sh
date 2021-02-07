@@ -3,7 +3,7 @@
 # Vagrant
 #sudo apt install -qq -y vagrant=2.2.10 
 # Install from Debian package if version is not in default repository
-VAGRANT_VER="2.2.9"
+VAGRANT_VER="2.2.14"
 tempVagrantVersion=$(vagrant --version)
 # Splitting 'Vagrant 2.2.9' output with space as delimiter and putting the version in 'checkVersion' variable
 checkVersion=$(echo $tempVagrantVersion | sed -E 's/(.*) {1}(.*)/\2/')

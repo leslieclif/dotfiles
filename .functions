@@ -16,7 +16,12 @@ function cd () {
 
 # Update Developer desktop settings
 function us () {
-    cd $HOME/dotfiles && ./install.sh /home/leslie
+    cd $HOME/projects/dotfiles && ./install.sh /home/leslie
+}
+
+# Backup VSCode settings to dotfiles
+function setbackup () {
+    cp $HOME/.config/Code/User/settings.json $HOME/projects/dotfiles/.config/Code/User/settings.json
 }
 
 # Change working directory to the top-most Finder window location

@@ -1,0 +1,20 @@
+Host *
+    ServerAliveInterval 300
+    ServerAliveCountMax 2
+
+Host github.com
+    IdentityFile ~/.ssh/github-leslieclif
+
+
+#Host pi
+#    HostName 192.168.1.104
+#    User pi
+#
+#Host pi-anywhere
+#    HostName dhruvasagar.com
+#    Port 9022
+#    User pi
+#
+#Host usbarmory
+#    HostName 10.0.0.1
+#    User root

@@ -23,8 +23,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# Use case-sensitive completion
+CASE_SENSITIVE="true"
+
+# Fix slow paste
+DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -76,11 +79,45 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  docker
   zsh-syntax-highlighting
+  aws
+  colored-man-pages
+  docker
+  fast-syntax-highlighting
+  git
+  golang
+  helm
+  kubectl
+  npm
+  rvm
+  terraform
+  tmux
+  vi-mode
+  you-should-use
+  z
+  zsh-autosuggestions
+  zsh-completions
   )
 
 source $ZSH/oh-my-zsh.sh
+
+
+# Bind C+Space to accept the current suggestion
+bindkey '^ ' autosuggest-accept
+
+# Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
+export KEYTIMEOUT=1
+
+# Set the default umask
+umask 022
+
+# Add more dirs to PATH
+if [[ ! "$PATH" == *:.* ]]; then
+    export PATH="${PATH}:${HOME}/.bin:."
+fi
+
+# Only display targets tag for make command completion
+zstyle ':completion:*:*:make::' tag-order 'targets variables'
 
 # Load Zsh profile
 if [ -f ~/.profile ]; then

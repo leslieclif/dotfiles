@@ -32,5 +32,6 @@ install nmap
 install tree
 install vim
 install wget
+install jq
 # Addon packages
 echo "✔ base packages are installed"

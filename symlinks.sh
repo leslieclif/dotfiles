@@ -5,6 +5,11 @@
 
 dotfilesDir=$(pwd)
 dotfilesBkpDir="${HOME}/dotfilesbkp/"
+# List the files to create symlinks 
+files="bashrc profile zshrc exports aliases functions private gitconfig gitignore tmux.conf p10k.zsh"
+
+# Create dotfiles backup directory
+mkdir -p ${dotfilesBkpDir}
 
 # Removes existing symlinks, backs up dotfiles and creates new symlinks
 function linkDotfile {
@@ -13,9 +18,8 @@ function linkDotfile {
 
   if [ -h ~/${1} ]; then
     # Existing symlink 
-    # This is only required for Windows WSL
     echo "Removing existing symlink: ${dest}"
-    #rm ${dest} 
+    rm ${dest} 
 
   elif [ -f "${dest}" ]; then
     # Existing file
@@ -27,15 +31,9 @@ function linkDotfile {
     echo "Backing up existing dir: ${dest}"
     mv ${dest}{,.${dateStr}}
   fi
-  # This is only required for Windows WSL
   echo "Creating new symlink: ${dest}"
-  #ln -s ${dotfilesDir}/${1} ${dest}
+  ln -s ${dotfilesDir}/${1} ${dest}
 }
-# List the files to create symlinks 
-files="bashrc profile zshrc exports aliases functions private gitconfig gitignore"
-
-# Create dotfiles backup directory
-mkdir -p ${dotfilesBkpDir}
 
 for file in ${files}; do
     linkDotfile .${file}

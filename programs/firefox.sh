@@ -2,7 +2,11 @@
 
 # Firefox browser
 # https://launchpad.net/~mozillateam/+archive/ubuntu/firefox-next
-echo "🦊 Installing Firefox"
-sudo add-apt-repository ppa:mozillateam/firefox-next -y
-sudo apt update
-sudo apt install -y firefox
+if type -p firefox > /dev/null; then
+    echo "✔ 🦊 [Firefox] Installed!"
+else
+    echo "🦊 Installing Firefox"
+    sudo add-apt-repository ppa:mozillateam/firefox-next -y
+    sudo apt update
+    sudo apt install -y firefox
+fi

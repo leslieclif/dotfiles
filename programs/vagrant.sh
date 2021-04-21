@@ -1,12 +1,9 @@
 #!/bin/bash
 
-# Vagrant
-#sudo apt install -qq -y vagrant=2.2.10 
 # Install from Debian package if version is not in default repository
-VAGRANT_VER="2.2.14"
-tempVagrantVersion=$(vagrant --version)
+VAGRANT_VER="2.2.15"
 # Splitting 'Vagrant 2.2.9' output with space as delimiter and putting the version in 'checkVersion' variable
-checkVersion=$(echo $tempVagrantVersion | sed -E 's/(.*) {1}(.*)/\2/')
+checkVersion="$(vagrant --version | cut -d ' ' -f2)"
 if [ ${checkVersion} = ${VAGRANT_VER} ]; then
     echo "Already installed Vagrant: ${VAGRANT_VER}"
 else
@@ -19,7 +16,7 @@ fi
 #Plugins
 sudo vagrant plugin list &> /dev/null
 if [ $? -ne 0 ]; then
-echo "Installing Vagrant Plugins..."
+    echo "Installing Vagrant Plugins..."
     #sudo vagrant plugin install vagrant-libvirt vagrant-vbguest
     vagrant plugin install vagrant-vbguest
 else

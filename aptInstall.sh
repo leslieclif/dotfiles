@@ -33,5 +33,7 @@ install tree
 install vim
 install wget
 install jq
+install gnome-shell
+install ubuntu-gnome-desktop
 # Addon packages
 echo "✔ base packages are installed"

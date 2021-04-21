@@ -41,3 +41,7 @@ done
 
 echo "✔ oh my zsh configured!"
 
+# Install keepass 2
+sudo apt-add-repository ppa:jtaylor/keepass -y
+sudo apt-get install keepass2 -y
+echo "✔ Keepass installed!"

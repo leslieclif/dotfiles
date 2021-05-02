@@ -19,6 +19,8 @@ function install {
   code --install-extension ${name} --force
 }
 
+install ms-azuretools.vscode-docker
+install ms-kubernetes-tools.vscode-kubernetes-tools
 # install batisteo.vscode-django
 # install bibhasdn.django-html
 # install bierner.markdown-preview-github-styles

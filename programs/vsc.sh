@@ -16,11 +16,12 @@ fi
 # Install VSCode extensions
 function install {
   name="${1}"
-  code --install-extension ${name} --force
+  code --install-extension ${name} --force 2> /dev/null
 }
 
+install redhat.vscode-yaml
 install ms-azuretools.vscode-docker
-install ms-kubernetes-tools.vscode-kubernetes-tools
+# install ms-kubernetes-tools.vscode-kubernetes-tools
 # install batisteo.vscode-django
 # install bibhasdn.django-html
 # install bierner.markdown-preview-github-styles

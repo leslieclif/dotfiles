@@ -18,7 +18,7 @@ function linkDotfile {
 
   if [ -h ~/${1} ]; then
     # Existing symlink 
-    echo "Removing existing symlink: ${dest}"
+    #echo "Removing existing symlink: ${dest}"
     rm ${dest} 
 
   elif [ -f "${dest}" ]; then
@@ -31,14 +31,14 @@ function linkDotfile {
     echo "Backing up existing dir: ${dest}"
     mv ${dest}{,.${dateStr}}
   fi
-  echo "Creating new symlink: ${dest}"
+  #echo "Creating new symlink: ${dest}"
   ln -s ${dotfilesDir}/${1} ${dest}
 }
 
 for file in ${files}; do
     linkDotfile .${file}
 done
-echo "✔ symlinks update done!"
+#echo "✔ symlinks update done!"
 
 #rm -f ~/projects
 #ln -sf /mnt/c/Users/Leslie/testprojects ~/projects
@@ -46,7 +46,7 @@ echo "✔ symlinks update done!"
 #ln -sf /mnt/c/Users/jieverson/Downloads ~/downloads
 #rm -f ~/pictures
 #ln -sf /mnt/c/Users/jieverson/Pictures ~/pictures
-echo "✔ alias for windows folders"
+#echo "✔ alias for windows folders"
 
 # Install NPM, Docker etc
-echo "✔ apt dev tools installed"
+#echo "✔ apt dev tools installed"

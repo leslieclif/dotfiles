@@ -8,21 +8,27 @@ if [ $SHELL != '/usr/bin/zsh' ]; then
     echo "✔ [zsh] as default shell for leslie"  
 fi
 # install tmux
-[ -d "${HOME}/.tmux/plugins/tpm" ] || git clone https://github.com/tmux-plugins/tpm "${HOME}/.tmux/plugins/tpm"
-echo "✔ [tmux] configured!"
+if [ -d "${HOME}/.tmux/plugins/tpm" ]; then
+    echo "✔ [tmux][plugins] pulling latest changes"
+    cd ${HOME}/.tmux/plugins/tpm && git pull origin $(git rev-parse --abbrev-ref HEAD)
+    echo "✔ [tmux][plugins] Configured!"
+else
+    git clone https://github.com/tmux-plugins/tpm "${HOME}/.tmux/plugins/tpm"
+fi
 # install gnome-terminal themes
 export TERMINAL=gnome-terminal
 terminal_install_dir="${HOME}/gogh"
 if [ -d "${terminal_install_dir}" ]; then
-    echo "✔ [gnome-terminal] already configured!"
+    echo "✔ [gnome-terminal] pulling latest changes"
+    cd $terminal_install_dir && git pull origin $(git rev-parse --abbrev-ref HEAD)
+    echo "✔ [gnome-terminal] Configured!"
 else
     echo "[gnome-terminal] Configure"
-    rm -rf "/tmp/gogh"
     rm -rf "$terminal_install_dir"  && mkdir -p "$terminal_install_dir"
     git clone https://github.com/Mayccoll/Gogh.git "$terminal_install_dir"
-    echo "✔ [gnome-terminal] configured One Dark"
+    echo "✔ [gnome-terminal] Configured One Dark"
     "$terminal_install_dir/themes/one-dark.sh"
-    echo "✔ [gnome-terminal] configured Nord"
+    echo "✔ [gnome-terminal] Configured Nord"
     "$terminal_install_dir/themes/nord.sh"
 fi
 # install oh-my-zsh
@@ -40,16 +46,19 @@ declare -A plugins=(
 for path in "${!plugins[@]}"; do
     if [[ ! -d "${ZSH_CUSTOM}/$path" ]]; then
         git clone "${plugins[$path]}" "${ZSH_CUSTOM}/$path"
+    else
+        echo "✔ [oh-my-zsh][${path}] pulling latest changes"
+        cd "${ZSH_CUSTOM}/$path" && git pull origin $(git rev-parse --abbrev-ref HEAD)
     fi
 done
 
-echo "✔ [oh-my-zsh] configured!"
+echo "✔ [oh-my-zsh][Plugins] Configured!"
 
 # Install keepass 2
 if type -p keepass2 > /dev/null; then
-    echo "✔ [Keepass] already installed!"
+    echo "✔ [Keepass] Installed!"
 else
+    echo "✔ [Keepass] Configure"
     sudo apt-add-repository ppa:jtaylor/keepass -y
     sudo apt-get install keepass2 -y
-    echo "✔ [Keepass] installed!"
 fi

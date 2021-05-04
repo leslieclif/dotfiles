@@ -17,26 +17,26 @@ echo "Dotfiles directory $(pwd)"
 
 # copy static files and config
 ./copy.sh
-echo "✔ copy files"
+echo "✔ Copy files"
 
 # install apt packages
 ./aptInstall.sh
-echo "✔ apt packages are up to date"
+echo "✔ Apt packages are up to date"
 
 #git pull
-echo "✔ dotfiles are up to date"
+echo "✔ Dotfiles are up to date"
 
 # Install packages/scripts from internet
 ./downloadFiles.sh
-echo "✔ scripts are up to date"
+echo "✔ Scripts are up to date"
 
 # list of files/folders to symlink in ${homedir}
 ./symlinks.sh
-echo "✔ symbolic links are up to date"
+echo "✔ Symbolic links are up to date"
 
 # Install Programs
 ./programs/programs.sh
-echo "✔ develper programs are up to date"
+echo "✔ Developer programs are up to date"
 
 sudo apt-get autoremove -y && sudo apt-get clean -y
 echo "✔ Removed packages no longer required"

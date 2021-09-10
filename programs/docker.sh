@@ -1,5 +1,5 @@
 #!/bin/bash
-DOCKER_VER="20.10.6"
+DOCKER_VER="20.10.8"
 # Splitting 'docker --version' output with space as delimiter and putting the version in 'checkVersion' variable
 checkVersion="$(docker -v | cut -d ' ' -f3 | cut -d ',' -f1)"
 if [ ${checkVersion} = ${DOCKER_VER} ]; then
@@ -24,6 +24,6 @@ else
 
   sudo apt-get update -y
 
-  sudo apt-get install docker-ce docker-ce-cli containerd.io
+  sudo apt-get install docker-ce docker-ce-cli containerd.io -y
   #sudo docker run hello-world
 fi

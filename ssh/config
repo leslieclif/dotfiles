@@ -5,6 +5,11 @@ Host *
 Host github.com
     IdentityFile ~/.ssh/github-leslieclif
 
+Host 192.168.99.100
+    IdentityFile ~/.ssh/ansible-user
+
+Host 192.168.99.101
+    IdentityFile ~/.ssh/ansible-user
 
 #Host pi
 #    HostName 192.168.1.104

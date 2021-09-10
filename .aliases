@@ -18,7 +18,7 @@ alias p="cd ~/projects"
 alias d="cd ~/projects/dotfiles"
 alias n="cd ~/projects/ang/notebook"
 alias ag="cd ~/projects/ang/gen"
-alias i="cd ~/projects/vagrant/infra"
+alias i="cd ~/projects/infra"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

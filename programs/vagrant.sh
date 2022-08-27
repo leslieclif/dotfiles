@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install from Debian package if version is not in default repository
-VAGRANT_VER="2.2.18"
+VAGRANT_VER="2.2.19"
 # Splitting 'Vagrant 2.2.9' output with space as delimiter and putting the version in 'checkVersion' variable
 checkVersion="$(vagrant --version | cut -d ' ' -f2)"
 if [ ${checkVersion} = ${VAGRANT_VER} ]; then

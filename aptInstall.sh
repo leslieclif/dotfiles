@@ -4,7 +4,7 @@
 ############################
 
 echo "apt update..."
-sudo apt -qq update
+sudo apt update && sudo apt-full-upgrade -y
 echo "✔ Apt Repository updated!"
 
 function install {
@@ -29,6 +29,7 @@ install dialog
 install file
 install htop
 install nmap
+install net-tools
 install tree
 install vim
 install wget

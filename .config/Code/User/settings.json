@@ -6,6 +6,15 @@
     "terminal.integrated.rightClickCopyPaste": true,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.confirmOnExit": "always",
     "terminal.integrated.scrollback": 5000,
-    "terminal.integrated.confirmOnExit": true
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/largeFolder": true
+    }
 }

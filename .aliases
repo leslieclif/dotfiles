@@ -19,6 +19,7 @@ alias d="cd ~/projects/dotfiles"
 alias n="cd ~/projects/ang/notebook"
 alias ag="cd ~/projects/ang/gen"
 alias i="cd ~/projects/infra"
+alias backup='sudo rsync -aAxv --delete --exclude="leslie/.z" --exclude="leslie/.zcomp*" --exclude="leslie/.cache" --exclude="leslie/.config" --exclude="leslie/.mozilla" --exclude="leslie/.local" --exclude="leslie/snap" --exclude="leslie/.zoom" --exclude="*.vmdk"  /home/leslie /media/leslie/backup/lyn'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -95,3 +96,12 @@ alias pym='python3 manage.py'
 alias mkenv='python3 -m venv env'
 alias startenv='source env/bin/activate && which python3'
 alias stopenv='deactivate'
+
+# Kubectl
+alias nano="nano -cmET4"
+alias grep="grep -i --color"
+alias c="clear"
+
+#source <(kubectl completion bash)
+
+echo "Hello k8s" 

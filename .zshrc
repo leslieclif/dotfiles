@@ -137,6 +137,7 @@ zstyle ':completion:*:*:make::' tag-order 'targets variables'
 # Load Zsh profile
 if [ -f ~/.profile ]; then
     source ~/.profile
+#    source ~/.aliases
 fi
 
 # User configuration
